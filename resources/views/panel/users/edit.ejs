@@ -1,0 +1,94 @@
+<%- include('../../layouts/panel/header'); %>
+<div class="container">
+    <div class="jumbotron">
+        <!--//-->
+        <form action="/panel/users/update/<%= user.id %>" method="post">
+            <!--//-->
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <input type="text"
+                           class="form-control"
+                           value="<%= user.first_name %>"
+                           name="first_name"
+                           id="first-name"
+                           placeholder="Enter First Name">
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text"
+                           class="form-control"
+                           value="<%= user.last_name %>"
+                           name="last_name"
+                           id="last-name"
+                           placeholder="Enter Last Name">
+                </div>
+            </div>
+            <!--//-->
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <input type="text"
+                           class="form-control"
+                           value="<%= user.username %>"
+                           name="username"
+                           id="username"
+                           placeholder="Enter User Name">
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="email"
+                           class="form-control"
+                           value="<%= user.email %>"
+                           name="email"
+                           id="email"
+                           placeholder="Enter Email">
+                </div>
+            </div>
+            <!--//-->
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <input type="password"
+                           class="form-control"
+                           name="password"
+                           id="password"
+                           placeholder="Password">
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="password"
+                           class="form-control"
+                           name="confirmation_password"
+                           id="confirmation-password"
+                           placeholder="Confirmation Password">
+                </div>
+            </div>
+            <!--//-->
+            <div class="row">
+                <div class="form-group col-md-12">
+                <textarea class="form-control"
+                          name="home_address"
+                          id="home-address"
+                          placeholder="Enter Home Address"
+                          rows="5">
+                          <%= user.home_address %>
+                </textarea>
+                </div>
+            </div>
+            <!--//-->
+            <div class="row">
+                <div class="form-group col-md-12">
+                <textarea class="form-control"
+                          name="work_address"
+                          id="work-address"
+                          placeholder="Enter Work Address"
+                          rows="5">
+                          <%= user.home_address %>
+                </textarea>
+                </div>
+            </div>
+            <!--//-->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('../../layouts/panel/footer'); %>
+
+

@@ -1,0 +1,74 @@
+<%- include('../../layouts/panel/header'); %>
+<div class="container">
+    <a href="/panel/employees/create" class="btn btn-success">Register employees</a>
+    <table class="table">
+        <thead class="text-center">
+        <tr>
+            <th>#</th>
+            <th>FullName</th>
+            <th>UserName</th>
+            <th>Email</th>
+            <th>Option</th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+        <% for(let employee of employees) { %>
+            <tr>
+                <td><%= employee.id %></td>
+                <td><%= employee.first_name %> <%= employee.last_name %></td>
+                <td><%= employee.username %></td>
+                <td><%= employee.email %></td>
+                <td>
+                    <a href="/panel/employees/edit/<%= employee.id %>" class="text-success">Edit</a>
+                    <a href="/panel/employees/<%= employee.id %>" class="text-primary">Show</a>
+                    <a href="/panel/employees/destroy/<%= employee.id %>" class="text-danger">Delete</a>
+<!--
+                    <a href="/panel/employees/destroy/<%= employee.id %>" onclick="employeeDelete(employee.id)" id="employee-delete" class="text-red-500 font-bold">Delete</a>
+-->
+                </td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+
+</div>
+<script>
+/*    function employeeDelete(id){
+        console.log(id)
+        $.ajax({
+            url: 'localhost:8000/panel/employees/destroy' + id,
+            type: 'DELETE',
+        })
+            .success(function(data) {
+                if (data.success) {
+                    // Lazy: refresh window
+                    window.location.reload();
+                }
+            })
+            .error(function() {
+                // Show an error or something fancy
+            });
+    }*/
+
+    /*$( "#employee-delete" ).click(function() {
+
+    var id = document.getElementById('employeeDelete');
+    console.log(id);
+    $.ajax({
+        url: 'localhost:8000/panel/employees/destroy' + id,
+        type: 'delete',
+    })
+        .success(function(data) {
+            if (data.success) {
+                // Lazy: refresh window
+                window.location.reload();
+            }
+        })
+        .error(function() {
+            // Show an error or something fancy
+        });
+    });*/
+</script>
+<%- include('../../layouts/panel/footer'); %>
+
+

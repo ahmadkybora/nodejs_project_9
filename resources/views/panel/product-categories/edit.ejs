@@ -1,0 +1,52 @@
+<%- include('../../layouts/panel/header'); %>
+<div class="container">
+    <div class="jumbotron">
+        <!--//-->
+        <%- include("../../errors/errorMessages.ejs") %>
+        <form action="/panel/product-categories/update/<%= category.id %>" method="post">
+            <!--//-->
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <select class="form-control"
+                            name="brandId"
+                            id="brand-id">
+                        <option value="<%= category.Brand.id %>"><%= category.Brand.name %></option>
+                        <% for(let brand of brands) { %>
+                            <% if(brand.id !== category.Brand.id) { %>
+                                <option value="<%= brand.id %>"><%= brand.name %></option>
+                            <% } %>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <select class="form-control"
+                            name="status"
+                            id="status">
+                        <option value="<%= category.status %>"><%= category.status %></option>
+                        <% if(category.status === "PENDING") { %>
+                            <option value="ACTIVE">ACTIVE</option>
+                        <% } %>
+                        <% if (category.status === "ACTIVE") { %>
+                            <option value="PENDING">PENDING</option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text"
+                           class="form-control"
+                           name="name"
+                           id="name"
+                           value="<%= category.name %>"
+                           placeholder="Enter Name">
+                </div>
+            </div>
+            <!--//-->
+            <div class="form-group">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('../../layouts/panel/footer'); %>
+
+

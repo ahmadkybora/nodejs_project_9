@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <title></title>
+</head>
+<body style="background-color: lavenderblush">
+<div id="app">
+    <div class="max-w-xl mx-auto bg-blue-100 rounded-xl shadow-md overflow-hidden xl:max-w-7xl">
+        <div class="row mt-5">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3">
+                <div>
+                    <button class="loginBTN">
+                        <a href="/logout">logout</a>
+                    </button>
+                </div>
+                <!--<div>
+                    <button class="loginBTN">
+                        <a href="/login">Login</a>
+                    </button>
+                    <button class="loginBTN">
+                        <a href="/register">Register</a>
+                    </button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+            <%- include('../../layouts/panel/sidebar'); %>
+            <%- include('../../layouts/panel/navbar'); %>

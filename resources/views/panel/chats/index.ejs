@@ -1,0 +1,35 @@
+<%- include('../../layouts/panel/header'); %>
+<div class="container max-auto">
+    <a href="/panel/chats/create" class="btn btn-success">Register Chats</a>
+    <table class="table">
+        <thead class="text-center">
+        <tr>
+            <th>#</th>
+            <th>CategoryName</th>
+            <th>Name</th>
+            <th>User</th>
+            <th>Status</th>
+            <th>Option</th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+        <% for(let chat of chats) { %>
+            <tr>
+                <td><%= chat.id %></td>
+                <td><%= chat.category_id %></td>
+                <td><%= chat.title %></td>
+                <td><%= chat.user_id %></td>
+                <td><%= chat.status %></td>
+                <td>
+                    <a href="/panel/chats/edit/<%= chat.id %>" class="text-success">Edit</a>
+                    <a href="/panel/chats/<%= chat.id %>" class="text-primary">Show</a>
+                    <a href="/panel/chats/destroy/<%= chat.id %>" class="text-danger">Delete</a>
+                </td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<%- include('../../layouts/panel/footer'); %>
+
+

@@ -1,0 +1,80 @@
+<%- include('../../layouts/panel/header'); %>
+<div class="container max-auto">
+    <a href="/panel/product-categories/create" class="btn btn-success">Register productCategories</a>
+    <!--//-->
+    <br>
+    <br>
+    <form action="/panel/product-categories/category-search" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="text" name="search" class="form-control" placeholder="Search..">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Search</button>
+        </div>
+    </form>
+    <br>
+    <!--//-->
+    <table class="table">
+        <thead class="text-center">
+        <tr>
+            <th>#</th>
+            <th>Brand Name</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Image</th>
+            <th>Created</th>
+            <th>Option</th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+        <% if(search === true) { %>
+            <% for(let category of categorySearch) { %>
+                <tr>
+                    <td><%= category.id %></td>
+                    <td><%= category.Brand.name %></td>
+                    <td><%= category.name %></td>
+                    <% if(category.status === "ACTIVE") { %>
+                        <td class="text-success"><%= category.status %></td>
+                    <% }else if(category.status === "PENDING"){ %>
+                        <td class="text-warning"><%= category.status %></td>
+                    <% } %>
+                    <td>
+                        <img src="<%= category.image %>" style="height: 150px; width: 150px;" alt="" />
+                    </td>
+                    <td>
+                        <a href="/panel/product-categories/edit/<%= category.id %>" class="text-success">Edit</a>
+                        <a href="/panel/product-categories/<%= category.id %>" class="text-primary">Show</a>
+                        <a href="/panel/product-categories/destroy/<%= category.id %>" class="text-danger">Delete</a>
+                    </td>
+                </tr>
+            <% } %>
+        <% } else { %>
+            <% for(let category of categories) { %>
+                <tr>
+                    <td><%= category.id %></td>
+                    <td><%= category.Brand.name %></td>
+                    <td><%= category.name %></td>
+                    <% if(category.status === "ACTIVE") { %>
+                        <td class="text-success"><%= category.status %></td>
+                    <% }else if(category.status === "PENDING"){ %>
+                        <td class="text-warning"><%= category.status %></td>
+                    <% } %>
+                    <td>
+                        <img class="image-circle" src="<%= category.image %>" style="height: 50px; width: 50px;" alt="">
+                    </td>
+                    <td><%= category.createdAt %></td>
+                    <td>
+                        <a href="/panel/product-categories/edit/<%= category.id %>" class="text-success">Edit</a>
+                        <a href="/panel/product-categories/<%= category.id %>" class="text-primary">Show</a>
+                        <a href="/panel/product-categories/destroy/<%= category.id %>" class="text-danger">Delete</a>
+                    </td>
+                </tr>
+            <% } %>
+        <% } %>
+        </tbody>
+    </table>
+    <%- include('../../includes/pagination.ejs'); %>
+</div>
+<%- include('../../layouts/panel/footer'); %>
+
+

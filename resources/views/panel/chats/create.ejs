@@ -1,0 +1,82 @@
+<%- include('../../layouts/panel/header'); %>
+<div class="container">
+    <div class="jumbotron">
+        <!--//-->
+        <%- include("../../errors/errorMessages.ejs") %>
+        <form action="/panel/chats/store" method="post">
+            <!--//-->
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <select class="form-control"
+                            name="category_id"
+                            id="category-id">
+                        <% for(let category of categories) { %>
+                            <option value="<%= category.id %>"><%= category.title %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text"
+                           class="form-control"
+                           name="title"
+                           id="title"
+                           placeholder="Enter Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <textarea type="text"
+                              class="form-control"
+                              name="description"
+                              id="description"
+                              placeholder="Enter Name"></textarea>
+                </div>
+            </div>
+            <!--//-->
+            <div class="form-group">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        <!--//-->
+        <div class="container">
+            <div class="jumbotron">
+                <ul id="messages"></ul>
+                <form id="form" action="">
+                    <div class="form-group">
+                        <input class="form-control" id="input" autocomplete="off"/>
+                    </div>
+                    <button>Send</button>
+                </form>
+            </div>
+        </div>
+        <!--//-->
+        <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"
+                integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh"
+                crossorigin="anonymous"></script>
+        <script>
+            var socket = io();
+
+            var messages = document.getElementById('messages');
+            var form = document.getElementById('form');
+            var input = document.getElementById('input');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (input.value) {
+                    socket.emit('chat message', input.value);
+                    input.value = '';
+                }
+            });
+
+            socket.on('chat message', function (msg) {
+                var item = document.createElement('li');
+                item.textContent = msg;
+                messages.appendChild(item);
+                window.scrollTo(0, document.body.scrollHeight);
+            });
+        </script>
+    </div>
+</div>
+<%- include('../../layouts/panel/footer'); %>
+
+

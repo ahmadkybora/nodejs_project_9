@@ -1,0 +1,42 @@
+<%- include('../../layouts/panel/header'); %>
+<div class="container">
+    <div class="jumbotron">
+        <!--//-->
+        <%- include("../../errors/errorMessages.ejs") %>
+        <form action="/panel/chats/store" method="post">
+            <!--//-->
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <select class="form-control"
+                            name="category_id"
+                            id="category-id">
+                        <% for(let category of categories) { %>
+                            <option value="<%= category.id %>"><%= category.name %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="text"
+                           class="form-control"
+                           name="name"
+                           id="name"
+                           placeholder="Enter Name">
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="text"
+                           class="form-control"
+                           name="price"
+                           id="price"
+                           placeholder="Enter Name">
+                </div>
+            </div>
+            <!--//-->
+            <div class="form-group">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('../../layouts/panel/footer'); %>
+
+

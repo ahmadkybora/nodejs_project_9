@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <title></title>
+</head>
+<body style="background-color: lavenderblush">
+<div id="app">
+    <!-- -&#45;&#45;-->
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <!-- -&#45;&#45;-->
+            <div class="col-md-3">
+                <h4>Node js Project</h4>
+            </div>
+            <!-- -&#45;&#45;-->
+            <div class="col-md-5">
+                <div class="input-group">
+                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                           aria-describedby="search-addon"/>
+                    <button type="button" class="btn btn-outline-success">search</button>
+                </div>
+            </div>
+            <!-- -&#45;&#45;-->
+            <div class="col-md-4">
+                <div class="row">
+                    <!-- -&#45;&#45;-->
+                    <div class="container">
+                        <% if(isLoggedIn) { %>
+                            <div class="btn-group">
+                                <button class="btn btn-warning">
+                                    <a href="/logout">logout</a>
+                                </button>
+                            </div>
+                            <!-- -&#45;&#45;-->
+                            <div class="btn-group">
+                                <a type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    Cart <i class="fa fa-shopping-cart"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <button class="dropdown-item" type="button"></button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button"></button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button">Something else here</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- -&#45;&#45;-->
+                            <div class="btn-group">
+                                <a type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    Wallet <i class=""></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <button class="dropdown-item" type="button">Action</button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button">Another action</button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button">Something else here</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- -&#45;&#45;-->
+                            <div class="btn-group">
+                                <a type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    Profile <i class=""></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="" class="dropdown-item" type="button">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dropdown-item" type="button">Cart</a>
+                                    </li>
+                                    <li>
+                                        <a href="/logout" class="dropdown-item" type="button">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <h5>Ahmad Montazeri </h5>
+                            </div>
+                            <!-- -&#45;&#45;-->
+                        <% } else { %>
+                            <div class="btn-group">
+                                <button class="loginBTN">
+                                    <a href="/login">Login</a>
+                                </button>
+                                <button class="loginBTN">
+                                    <a href="/register">Register</a>
+                                </button>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+                <!-- -&#45;&#45;-->
+            </div>
+        </div>
+        <!-- -&#45;&#45;-->
+    </div>
+</div>
+<!-- -&#45;&#45;-->
+<%- include('../../layouts/front/navbar'); -%>
+<%- include('../../layouts/front/banner'); -%>
+<!-- -&#45;&#45;-->
+<!--<div class="container">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+        &lt;!&ndash; Heading &ndash;&gt;
+        <div class="font"> Real Time Quotes  </div>
+        <hr>
+        &lt;!&ndash; Default quote &ndash;&gt;
+        <div class="quotes" id="quotes">
+            <blockquote> have a great day , have a great life </blockquote>
+        </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+
+</div>
+
+<script>
+    //Jquery code starts here
+    $('document').ready(function(){
+        //Connecting the socket to host and port
+        var socket = io.connect('http://localhost:3000');
+        //Test event
+        //Users can skip it.
+        socket.on('news', function (data) {
+            console.log(data);
+            socket.emit('my other event', { my: 'data' });
+        });
+        //Test event ends here
+        //Main event "next"
+        socket.on('next' , function(data) {
+            console.log(data);
+            $('#quotes').append("<blockquote>" + data.data.quote + "</blockquote>")
+        })
+        //Event ends
+
+    });
+    //jquery code ends here
+</script>-->
+<div class="container mt-5">
+    <div class="jumbotron">
+        <% for(let product of products) { %>
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Name: <%= product.name %></h5>
+                    <p class="card-text">Price: <%= product.price %></p>
+                    <a href="#" class="text-primary"><i class="fa fa-thumbs-up"></i></a>
+                    <a href="#" class="text-primary"><i class="fa fa-thumbs-down"></i></a>
+                    <a href="#" class="text-danger"><i class="fa fa-heart"></i></a>
+                    <a href="#" class="text-success"><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+<!-- -&#45;&#45;-->
+<div class="owl-carousel owl-theme">
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('.owl-carousel').owlCarousel();
+    });
+</script>
+<!--<div class="container mt-5">
+    <div class="jumbotron">
+        <form class="msg-text">
+            <div class="form-group">
+                <input type="text" name="msg" id="msg" class="form-control" placeholder="Type Message Here..."
+                       autocomplete="off">
+            </div>
+            <div class="form-group" id="btn-send">
+                <button class="btn btn-success">Send</button>
+            </div>
+        </form>
+    </div>
+</div>-->
+<!-- -&#45;&#45;-->
+<!--<h1 id="socketio"> not connected </h1>
+<div id="display"> </div>
+<script src="https://cdn.socket.io/3.1.3/socket.io.min.js"
+        integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh"
+        crossorigin="anonymous"></script>
+<script>
+    var socket = io();
+    socket.on('connect', function() {
+        document.getElementById("socketio").innerHTML = "socket connected";
+    });
+    socket.on('showrows', function(chats) {
+        jQuery("#display").append(chats);
+    });
+
+    /*socket.on('showrows', function(chats) {
+        var html='';
+        for (var i=0; i<chats.length; i++) {
+            html += chats[i].title + ' ' + chats[i].description + '<br>';
+        }
+        document.getElementById("display").innerHTML = html;
+        console.log(chats);
+    });*/
+</script>-->
+<!-- -&#45;&#45;-->
+<!--<div class="container">
+    <div class="jumbotron">
+        <div class="card" style="width: 18rem;">
+            <div class="card-title">Chat</div>
+            <hr>
+            <div class="card-body">
+                <p id="messages"></p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <form id="form" action="">
+            <div class="form-group col-md-3">
+                <input class="form-control" id="input" autocomplete="off"/>
+            </div>
+            <button>Send</button>
+        </form>
+    </div>
+</div>-->
+<!--//--><!--
+<script src="https://cdn.socket.io/3.1.3/socket.io.min.js"
+        integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh"
+        crossorigin="anonymous"></script>
+<script>
+    var socket = io();
+
+    var messages = document.getElementById('messages');
+    var form = document.getElementById('form');
+    var input = document.getElementById('input');
+
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (input.value) {
+            socket.emit('chat message', input.value);
+            input.value = '';
+        }
+        socket.on('chat message', function (msg) {-->
+        <!--var url = 'localhost:3000/panel/chats/store';
+        var myform = $('#form')[0];
+        var formData = new FormData(myform);
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: formData,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 800000,
+            success: function (data) {
+                console.log("SUCCESS : ", data);
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+            }
+        });-->
+<!--        });
+
+    });
+
+
+    socket.on('chat message', function (msg) {
+        var item = document.createElement('p');
+        item.textContent = msg;
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+    });
+</script>-->
+<!-- -&#45;&#45;-->
+<!--<div class="container">
+    <br>
+    <div class="jumbotron">
+        <h1 class="display-4">Send Message</h1>
+        <br>
+        <input id="name" class="form-control" placeholder="Name">
+        <br>
+        <textarea id="message" class="form-control" placeholder="Your Message Here">
+</textarea>
+        <br>
+        <button id="send" class="btn btn-success">Send</button>
+    </div>
+    <div id=”messages”>
+
+    </div>
+</div>-->
+<!--<script>
+
+    var socket = io();
+
+    socket.emit('joining msg', name);
+
+    $('form').submit(function(e) {
+        e.preventDefault();            // will prevent page reloading
+        socket.emit('chat message', (name + ':  ' + $('#m').val()));
+        $('#messages').append($('<li id="list">').text('You:  ' + $('#m').val()));
+        $('#m').val('');
+        return false;
+    });
+    socket.on('chat message', function(msg){
+        $('#messages').append($('<li>').text(msg));
+    });
+
+</script>-->
+<!--<script>
+    $(() => {
+        $("#send").click(() => {
+            sendMessage({
+                name: $("#name").val(),
+                message: $("#message").val()
+            });
+        })
+        getMessages()
+    });
+
+    function addMessages(message) {
+        $("#messages").append(`
+      <h4> ${message.name} </h4>
+      <p>  ${message.message} </p>`)
+    }
+
+    function getMessages() {
+        $.get('http://localhost:8000/panel/chats', (data) => {
+            data.forEach(addMessages);
+        })
+    }
+
+    function sendMessage(message) {
+        $.post('http://localhost:8000/panel/chat/store', message)
+    }
+
+</script>-->
+<!-- -&#45;&#45;-->
+<div class="container mt-5">
+    <div class="jumbotron">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <% for(let chat of chats) { %>
+                    <h5 class="card-title"><%= chat.category_id %></h5>
+                    <p class="card-text"><%= chat.title %></p>
+                    <a href="<% chat.id %>" class="btn btn-primary">Go</a>
+                    <hr>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -&#45;&#45;-->
+<div class="container mt-5">
+    <div class="jumbotron">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -&#45;&#45;-->
+<div class="container mt-5">
+    <div class="jumbotron">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -&#45;&#45;-->
+<div class="container mt-5">
+    <div class="jumbotron">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -&#45;&#45;-->
+<div class="container mt-5">
+    <div class="jumbotron">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -&#45;&#45;-->
+<%- include('../../layouts/front/product-categories'); -%>
+<%- include('../../layouts/front/popular-product-categories'); -%>
+<%- include('../../layouts/front/brands'); -%>
+<%- include('../../layouts/front/popular-brands'); -%>
+<%- include('../../layouts/front/article-categories'); -%>
+<%- include('../../layouts/front/popular-article-categories'); -%>
+<%- include('../../layouts/front/articles'); -%>
+<%- include('../../layouts/front/popular-articles'); -%>
+<%- include('../../layouts/front/chats'); -%>
+<%- include('../../layouts/front/popular-chats'); -%>
+<%- include('../../layouts/front/footer'); -%>
+
+

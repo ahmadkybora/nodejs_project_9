@@ -1,0 +1,33 @@
+<%- include('../../layouts/panel/header'); %>
+<div class="container max-auto">
+    <a href="/panel/articles/create" class="btn btn-success">Register Products</a>
+    <table class="table">
+        <thead class="text-center">
+        <tr>
+            <th>#</th>
+            <th>CategoryName</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Option</th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+        <% for(let article of articles) { %>
+            <tr>
+                <td><%= article.id %></td>
+                <td><%= article.category_id %></td>
+                <td><%= article.name %></td>
+                <td><%= article.status %></td>
+                <td>
+                    <a href="/panel/articles/edit/<%= article.id %>" class="text-success">Edit</a>
+                    <a href="/panel/articles/<%= article.id %>" class="text-primary">Show</a>
+                    <a href="/panel/articles/destroy/<%= article.id %>" class="text-danger">Delete</a>
+                </td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<%- include('../../layouts/panel/footer'); %>
+
+
