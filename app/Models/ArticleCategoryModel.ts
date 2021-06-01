@@ -2,7 +2,7 @@ import { Sequelize, Model, DataTypes } from "sequelize";
 const dbCon = require('../../database/connection');
 import EmployeeModel from './EmployeeModel';
 
-const ArticleCategoryModel = dbCon.define('ArticleCategory', {
+const ArticleCategoryModel = dbCon.define('ArticleCategoryModel', {
     id: {
         type: DataTypes.BIGINT,
         primaryKey: true,

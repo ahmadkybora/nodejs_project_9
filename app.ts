@@ -1,47 +1,40 @@
 import debug from 'debug';
 import express from 'express';
-import {Router, Request, Response, NextFunction} from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import passport from 'passport';
 import path from 'path';
 //import mongoose from 'mongoose';
 //import fs from 'fs';
-//import flash from 'flash';
+//const flash = require('flash');
 //import session from 'express-session';
-import winston from 'winston';
-//import sequelize from 'sequelize-typescript';
-//import Sequelize from 'sequelize';
-
-import {
-    Sequelize,
-    Model,
-    ModelDefined,
-    DataTypes,
-    HasManyGetAssociationsMixin,
-    HasManyAddAssociationMixin,
-    HasManyHasAssociationMixin,
-    Association,
-    HasManyCountAssociationsMixin,
-    HasManyCreateAssociationMixin,
-    Optional,
-} from "sequelize";
+//import winston from 'winston';
+import sequelize from './database/connection';
+const session = require('express-session');
+const TWO_HOURS = 1000 * 60 * 60 * 2;
+const {
+    PORT = 8000,
+    NODE_ENV = 'development',
+    SESS_LIFETIME = TWO_HOURS,
+    SESS_NAME = 'sid',
+    SESS_SECRET = 'ssh!quit,it\'asecret!',
+} = process.env;
+const IN_PROD = NODE_ENV === 'production';
 
 const app = express();
 //app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Sequelize.sync();
 
-/*Sequelize
+sequelize
     .sync()
     .then(() => {
         console.log('Mysql Connected.');
     })
-    .catch(err => {
+    .catch((err: any) => {
         console.error('Unable to connect to the database:', err);
-    });*/
+    });
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -63,6 +56,18 @@ app.set("view engine", "ejs");
     app.use(morgan("combine", {stream: winston.stream}))
 }*/
 
+app.use(session({
+    name: SESS_NAME,
+    resave: true,
+    saveUninitialized: true,
+    secret: SESS_SECRET,
+    cookie: {
+        maxAge: SESS_LIFETIME,
+        sameSite: true,
+        secure: IN_PROD
+    },
+    //store: new MongoStore({mongooseConnection: mongoose.connection})
+}));
 debug("Connected To Database");
 
 const environment = process.env.NODE_ENV;

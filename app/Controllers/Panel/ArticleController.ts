@@ -1,8 +1,8 @@
 import Article from '../../Models/ArticleModel';
-import ArticleCategory from '../../Models/ArticleCategory';
-import articleRequestValidation from '../../../app/Requests/articleRequestValidation';
-import Validator = require('fastest-validator');
-const v = new Validator();
+//import ArticleCategory from '../../Models/ArticleCategoryModel';
+//import articleRequestValidation from '../../../app/Requests/articleRequest';
+//import Validator = require('fastest-validator');
+//const v = new Validator();
 import Handler from '../../../app/Exceptions/Handler';
 
 const ArticleController = {
@@ -29,10 +29,10 @@ async function index(req: any, res: any) {
 
 async function create(req: any, res: any) {
     try {
-        const categories = await ArticleCategory.findAll();
+        //const categories = await ArticleCategory.findAll();
         await res.render("panel/articles/create", {
             pageTitle: "",
-            categories: categories
+            //categories: categories
         })
     } catch (err) {
         console.log(err)
@@ -40,20 +40,20 @@ async function create(req: any, res: any) {
 }
 
 async function store(req: any, res: any) {
-    const validate = v.validate(req.body, articleRequestValidation);
-    if (validate) {
+    /*const validate = v.validate(req.body, articleRequestValidation);
+    if (validate) {*/
         try {
             await Article.create(req.body);
             res.redirect("panel/article")
         } catch (err) {
-            return Handler.Error_503();
+            return Handler.Error_503(req, res);
         }
-    } else {
+    /*} else {
         res.render("panel/articles/create", {
             pageTitle: 'article create',
             errors: validate,
         });
-    }
+    }*/
 }
 
 async function show(req: any, res: any) {

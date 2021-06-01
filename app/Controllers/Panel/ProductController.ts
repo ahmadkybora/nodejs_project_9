@@ -1,6 +1,6 @@
 import Product from '../../Models/ProductModel';
-import ProductCategory from '../../Models/ProductCategory';
-import productRequestValidation from '../../../app/Requests/productRequestValidation';
+import ProductCategory from '../../Models/ProductCategoryModel';
+//import productRequest from '../../../app/Requests/productRequest';
 import Validator from 'fastest-validator';
 const v = new Validator();
 import Handler from '../../../app/Exceptions/Handler';
@@ -49,7 +49,7 @@ async function store(req: any, res: any) {
             await Product.create(req.body);
             res.redirect("/panel/product")
         } catch (err) {
-            return Handler.Error_503();
+            return Handler.Error_404(req, res);
         }
     /*} else {
         res.render("panel/product/create", {
@@ -70,6 +70,6 @@ async function update(req: any, res: any) {
 }
 
 async function destroy(req: any, res: any) {
-};
+}
 
 export = ProductController;

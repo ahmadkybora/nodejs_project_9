@@ -1,5 +1,5 @@
-import articleCategory from '../../Models/articleCategory';
-import articleCategoryRequestValidation from '../../../app/Requests/articleCategoryRequestValidation';
+import articleCategory from '../../Models/articleCategoryModel';
+import articleCategoryRequest from '../../../app/Requests/articleCategoryRequest';
 import Validator from 'fastest-validator';
 const v = new Validator();
 import Handler from '../../../app/Exceptions/Handler';
@@ -37,13 +37,13 @@ async function create(req: any, res: any) {
 }
 
 async function store(req: any, res: any) {
-    const validate = v.validate(req.body, articleCategoryRequestValidation);
+    const validate = v.validate(req.body, articleCategoryRequest);
     if (validate) {
         try {
             await articleCategory.create(req.body);
             res.redirect("/panel/article-categories")
         } catch (err) {
-            return Handler.Error_503();
+            return Handler.Error_503(req, res);
         }
     } else {
         res.render("panel/article-categories/create", {

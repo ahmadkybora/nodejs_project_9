@@ -14,7 +14,7 @@ const BrandController = {
     destroy
 };
 
-async function index(req, res) {
+async function index(req: any, res: any) {
     try {
         const brands = await Brand.findAll();
         res.render('panel/brands', {
@@ -26,7 +26,7 @@ async function index(req, res) {
     }
 }
 
-async function create(req, res) {
+async function create(req: any, res: any) {
     try {
         await res.render('panel/brands/create', {
             pageTitle: 'brand create',
@@ -36,7 +36,7 @@ async function create(req, res) {
     }
 }
 
-async function store(req, res) {
+async function store(req: any, res: any) {
 /*    const validate = v.validate(req.body, brandRequestValidation);
     if (validate === true) {*/
         try {
@@ -55,10 +55,10 @@ async function store(req, res) {
     }*/
 }
 
-async function show(req, res) {
+async function show(req: any, res: any) {
 }
 
-async function edit(req, res) {
+async function edit(req: any, res: any) {
     try {
         const brand = await Brand.findByPk(req.params.id);
         res.render("panel/brands/edit", {
@@ -70,7 +70,7 @@ async function edit(req, res) {
     }
 }
 
-async function update(req, res) {
+async function update(req: any, res: any) {
     try {
         await Brand.update(req.body, {
             where: {
@@ -83,7 +83,7 @@ async function update(req, res) {
     }
 }
 
-async function destroy(req, res) {
+async function destroy(req: any, res: any) {
     try {
         await Brand.destroy({
             where: {

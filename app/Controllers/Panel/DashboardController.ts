@@ -8,7 +8,7 @@ const DashboardController = {
 
 function index(req: any, res: any) {
     res.render("panel/dashboard", {
-        message: req.flash("success"),
+        //message: req.flash("success"),
         formatDate,
         isLoggedIn,
     });

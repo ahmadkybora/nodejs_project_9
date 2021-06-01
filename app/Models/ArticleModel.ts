@@ -1,6 +1,6 @@
 import { Sequelize, Model, DataTypes } from "sequelize";
 const dbCon = require('../../database/connection');
-import ArticleCategory from './ArticleCategoryModel';
+//import ArticleCategoryModel from './ArticleCategoryModel';
 import EmployeeModel from './EmployeeModel';
 
 const Article = dbCon.define('Article', {
@@ -50,19 +50,19 @@ const Article = dbCon.define('Article', {
     }
 });
 
-Article.belongsTo(ArticleCategory, {
+/*Article.belongsTo(ArticleCategoryModel, {
     foreignKey: 'categoryId',
     constraint: true,
     onDelete: "CASCADE",
     onUpdate: "CASCADE",
 });
 
-ArticleCategory.hasMany(Article, {
+ArticleCategoryModel.hasMany(Article, {
     foreignKey: 'categoryId',
     constraint: true,
     onDelete: "CASCADE",
     onUpdate: "CASCADE",
-});
+});*/
 
 Article.belongsTo(EmployeeModel, {
     foreignKey: 'employeeId',

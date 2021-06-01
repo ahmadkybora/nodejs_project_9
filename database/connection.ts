@@ -1,5 +1,5 @@
-let config = require('./config.ts');
-import {Sequelize} from 'sequelize';
+import config from './config';
+import {Sequelize} from "sequelize";
 
 const sequelize = new Sequelize(
     config.database,
@@ -11,4 +11,4 @@ const sequelize = new Sequelize(
         }
     });
 
-module.exports = sequelize;
+export = sequelize;

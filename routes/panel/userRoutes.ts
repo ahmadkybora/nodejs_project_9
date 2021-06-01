@@ -2,9 +2,9 @@ import express from 'express';
 const router = express.Router();
 import UserController from '../../app/Controllers/Panel/UserController';
 import isLoggedIn from '../../middlewares/isLoggedIn';
-import Yup from 'yup';
+//import Yup from 'yup';
 
-const schema = Yup.object().shape({
+/*const schema = Yup.object().shape({
     first_name: Yup.string()
         .required("نام الزامی است")
         .min(4, "نام نباید کمتر از 4 حرف باشد")
@@ -14,7 +14,7 @@ const schema = Yup.object().shape({
     email: Yup.string().email("ایمیل اشتباه است").required("ایمیل الزامی است"),
     password: Yup.string().required("رمز عبور الزامی است").min(8).max(255),
     confirmation_password: Yup.string().required().oneOf([Yup.ref("password"), null]),
-});
+});*/
 
 router.get('/', isLoggedIn, UserController.index);
 //router.get('/:id', isLoggedIn, UserController.show);

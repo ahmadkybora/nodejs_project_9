@@ -1,10 +1,9 @@
 let config = {
-    host     : 'localhost',
+    host         : 'localhost',
     username     : 'root',
-    password : '',
-    database : 'nodejs_project_8',
-    //port: 3307,
-    dialect: 'mysql'
+    password     : '',
+    database     : 'nodejs_project_9',
+    dialect      : 'mysql'
 };
 
-module.exports = config;
+export = config;

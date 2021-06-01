@@ -2,7 +2,7 @@ import User from '../../Models/UserModel';
 //const mongoose = require('mongoose');
 //const EmployeeDB = mongoose.model('Employees');
 import Handler from '../../../app/Exceptions/Handler';
-import userRequestValidation from '../../../app/RequestsValidations/userRequestValidation';
+//import userRequest from '../../../app/Requests/userRequest';
 
 const UserController = {
     index,
@@ -21,11 +21,11 @@ async function index(req: any, res: any) {
     });*/
 
     User.findAll()
-        .then(users => {
+        .then((users: any) => {
             res.render("panel/users", {
                 users: users
             })
-        }).catch(err => {
+        }).catch((err: any) => {
         console.log(err)
     });
 
@@ -62,7 +62,7 @@ async function show(req: any, res: any) {
         });
 
     } catch (err) {
-        Handler.baseError(err);
+        Handler.Error_404(req, res);
     }
 
 /*
@@ -78,13 +78,13 @@ async function show(req: any, res: any) {
         });
 */
 
-};
+}
 
 function create(req: any, res: any) {
     res.render('panel/users/create');
-};
+}
 
-exports.store = async (req, res) => {
+async function store(req: any, res: any) {
     const newUser = {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
@@ -93,17 +93,17 @@ exports.store = async (req, res) => {
         password: req.body.password,
     };
 
-    userRequestValidation.validate(newUser);
-console.log(userRequestValidation.validate(newUser))
+    //userRequest.validate(newUser);
+//console.log(userRequest.validate(newUser))
     await User.create(newUser)
-        .then(user => {
+        .then((user: any) => {
             if(user)
                 res.redirect("/panel/users")
         })
         .catch((err:any) => {
             console.log(err)
         });
-};
+}
 
 async function edit(req: any, res: any){
     await User.findByPk(req.params.id)
