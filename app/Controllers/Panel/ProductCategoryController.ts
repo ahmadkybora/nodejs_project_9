@@ -11,9 +11,11 @@ import sequelize from "sequelize";
 const Op = sequelize.Op;
 const uuid = require('uuid').v4;
 import Formidable = require('formidable');
-import sharp from 'sharp';
+//import sharp from 'sharp';
+const sharp = require('sharp');
 //let path = require("path");
 import fs from 'fs';
+import {array} from "yup/es/locale";
 
 const ProductCategoryController = {
     search,
@@ -114,57 +116,69 @@ async function create(req: any, res: any) {
 }
 
 async function store(req: any, res: any) {
-    const brands = await Brand.findAll();
-    const employees = await Employee.findAll();
-
     try {
         let form = new Formidable.IncomingForm();
-        await form.parse(await req, (err, fields: any, files: any) => {
+        form.parse(req, async (err, fields: any, files: any) => {
             if (typeof files.file !== 'undefined') {
-                try {
-                    const validate = v.validate(fields, productCategoryRequest);
-                    if (validate === true) {
-                        console.log(files);
-                        let oldPath = files.file.path;
-                        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-                        let fileName = `${uniqueSuffix}_${uuid()}_${files.file.name}`;
-                        //let newPath = 'D:/nodejsProjects/nodejs_project_9/public/storage/product-categories/' + fileName;
-                        let newPath = 'C:/nodejs_projects/nodejs_project_9/public/storage/product-categories/' + fileName;
-                       /* let path = Buffer.from(newPath);
-                        console.log(path);
-                        sharp(path).jpeg({quality: 1}).toFile();*/
-                        fs.rename(oldPath, newPath, function (err: any) {
-                            if (err) {
-                                console.log(err);
-                            } else {
-                                ProductCategory.create({
-                                    employeeId: fields.employeeId,
-                                    name: fields.name,
-                                    image: newPath,
-                                    status: fields.status,
-                                    brandId: fields.brandId
-                                }, {
-                                    include: {
-                                        model: Brand
-                                    }
-                                });
-                            }
+                const validate = await v.validate(fields, productCategoryRequest);
+                if (validate === true) {
+                    let oldPath = files.file.path;
+                    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+                    let fileName = `${uniqueSuffix}_${uuid()}_${files.file.name}`;
+                    let newPath = `C:/nodejs_projects/nodejs_project_9/public/storage/product-categories/${fileName}`;
+
+                    await sharp(oldPath)
+                        .resize(125, 90)
+                        .png({
+                            quality: 90,
+                        }).jpeg({
+                            quality: 90,
+                        })
+                        .toFile(newPath)
+                        .then(() => {
+                            ProductCategory.create({
+                                employeeId: fields.employeeId,
+                                name: fields.name,
+                                image: newPath,
+                                status: fields.status,
+                                brandId: fields.brandId
+                            }, {
+                                include: {
+                                    model: Brand
+                                }
+                            });
                         });
-                        res.redirect("/panel/product-categories");
-                    } else {
-                        res.render("panel/product-categories/create", {
-                            title: "Product Categories",
-                            brands: brands,
-                            employees: employees,
-                            errors: validate,
-                        });
-                    }
-                } catch (err) {
-                    console.log(err)
+                    res.redirect("/panel/product-categories");
+                }
+                else
+                {
+                    res.render("panel/product-categories/create", {
+                        title: "Product Categories",
+                        brands: await Brand.findAll(),
+                        employees: await Employee.findAll(),
+                        errors: validate,
+                    });
                 }
             }
+            else
+            {
+                await ProductCategory.create({
+                    employeeId: fields.employeeId,
+                    name: fields.name,
+                    image: null,
+                    status: fields.status,
+                    brandId: fields.brandId
+                }, {
+                    include: {
+                        model: Brand
+                    }
+                });
+                res.redirect("/panel/product-categories");
+            }
         });
-    } catch (err) {
+    }
+    catch (err)
+    {
         console.log(err)
     }
 }
