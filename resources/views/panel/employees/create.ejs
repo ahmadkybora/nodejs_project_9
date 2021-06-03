@@ -3,7 +3,7 @@
     <div class="jumbotron">
         <!--//-->
         <%- include("../../errors/errorMessages.ejs") %>
-        <form action="/panel/employees/store" method="post">
+        <form action="/panel/employees/store" method="post" enctype="multipart/form-data">
             <!--//-->
             <div class="row">
                 <div class="form-group col-md-6">
@@ -66,23 +66,10 @@
                 </textarea>
                 </div>
             </div>
-            <div class="row">
-                <div class="form-group col-md-12">
-                    <div class="input-group-prepend">
-                        <div class="btn btn-success">image</div>
-                        <input type="file"
-                               class="form-control"
-                               name="selectedImage"
-                               id="selectedImage"
-                               placeholder="Enter Last Name">
-                    </div>
-                </div>
-            </div>
             <!--//-->
             <div class="row">
                 <div class="form-group col-md-12">
                     <div id="editor">
-                        <p>This is the editor content.</p>
                     </div>
                     <script src="../../../../node_modules/ckeditor4/ckeditor.js"></script>
                     <script>
@@ -99,6 +86,33 @@
                           placeholder="Enter Work Address"
                           rows="5">
                 </textarea>
+                </div>
+            </div>
+            <!--//-->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button
+                            class="btn btn-sm btn-outline-secondary"
+                            type="button"
+                            id="imageUpload"
+                    >
+                        آپلود عکس
+                    </button>
+                </div>
+                <div class="custom-file">
+                    <input
+                            type="file"
+                            class="custom-file-input"
+                            id="image"
+                            name="image"
+                    />
+                    <label
+                            id="imageStatus"
+                            class="custom-file-label"
+                            for="selectedImage"
+                    >
+                        عکس مورد نظر را انتخاب کنید
+                    </label>
                 </div>
             </div>
             <!--//-->

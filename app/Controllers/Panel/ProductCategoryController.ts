@@ -11,11 +11,11 @@ import sequelize from "sequelize";
 const Op = sequelize.Op;
 const uuid = require('uuid').v4;
 import Formidable = require('formidable');
-//import sharp from 'sharp';
-const sharp = require('sharp');
+import sharp from 'sharp';
+//const sharp = require('sharp');
 //let path = require("path");
-import fs from 'fs';
-import {array} from "yup/es/locale";
+//import fs from 'fs';
+//import {array} from "yup/es/locale";
 
 const ProductCategoryController = {
     search,

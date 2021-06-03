@@ -44,5 +44,4 @@ const productCategoryRequest = {
     }
 };
 
-console.log(productCategoryRequest);
 export = productCategoryRequest;

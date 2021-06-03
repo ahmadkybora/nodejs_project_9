@@ -4,7 +4,7 @@ const employeeRequest = {
         trim: true,
         min: 2,
         max: 255,
-        message: {
+        messages: {
             required: "نام الزامی است",
             stringMin: "نام نباید کمتر از 2 کلمه باشد",
             stringMax: "نام نباید بیشتر از 255 کلمه باشد",
@@ -36,15 +36,14 @@ const employeeRequest = {
     email: {
         type: "email",
         normalize: true,
-        min: 2,
-        max: 255,
+        empty: false,
         unique: true,
         messages: {
-            required: "ایمیل الزامی است",
+            //required: "ایمیل الزامی است",
             string: "ایمیل اشتباه است"
         }
     },
-    /*password: {
+    password: {
         type: "string",
         trim: true,
         min: 8,
@@ -56,7 +55,7 @@ const employeeRequest = {
             stringMin: "کلمه عبور نباید کمتر از 8 گلمه باشد",
             stringMax: "کلمه عبور نباید بیشتر از 255 گلمه باشد",
         }
-    },*/
+    },
     confirmation_password: {
         type: "string",
         trim: true,
@@ -77,7 +76,6 @@ const employeeRequest = {
         max: 255,
         unique: true,
         messages: {
-            required: "آدرس منزل الزامی است",
             stringMin: "آدرس منزل نباید کمتر از 2 گلمه باشد",
             stringMax: "آدرس منزل نباید بیشتر از 255 گلمه باشد",
         }
@@ -89,7 +87,6 @@ const employeeRequest = {
         max: 255,
         unique: true,
         messages: {
-            required: "آدرس محل کار الزامی است",
             stringMin: "آدرس محل کار نباید کمتر از 2 گلمه باشد",
             stringMax: "آدرس محل کار نباید بیشتر از 255 گلمه باشد",
         }
