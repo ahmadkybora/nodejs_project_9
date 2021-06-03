@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c16fb2f-d773-4a0a-851d-2b02112e32b6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controllers/Panel/ProductCategoryController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Panel/ProductCategoryController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/requests/ProductCategoryRequest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/requests/ProductCategoryRequest.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/product-categories/1622545859015-90519421_4d65332c-d8c2-4fe9-b38b-fe44c1cee20e_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/product-categories/1622546080666-105071390_53bb93ef-143f-4e59-bfa0-2059756f9e59_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/product-categories/1622546161847-75643312_8b6c438f-bd9e-40e9-9a2d-16395ccadee7_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/product-categories/1622546350980-123996475_e4a371c1-1522-4ad8-8025-1a9b65632f6b_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/product-categories/1622546488977-885840154_fdcaecb1-8eda-4a2b-a6be-3799ceea2181_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/product-categories/1622546628142-355236703_e829cc82-7ae4-4aad-b8d8-888c02a931cb_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/product-categories/1622549392961-417780302_003246bf-4a04-48a1-8fe2-83c92f1961b1_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/product-categories/1622549431512-56700859_db823535-2a22-45b4-9b79-edc826295147_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/product-categories/1622549578031-999033227_5819bc9f-bc88-46ff-a1e9-d2147ce8fea5_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/product-categories/1622549651632-815672719_7e9dab62-22f8-4a7f-a7bc-2e3782090403_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/product-categories/1622549890634-163202238_ea210ca0-5539-4778-a17e-f44724fb1440_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Requests/productCategoryRequest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/Requests/productCategoryRequest.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/panel/footer.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/panel/footer.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/product-categories/create.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/product-categories/create.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/product-categories/edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/product-categories/edit.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,15 +18,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/ProductCategoryController.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-616">
-              <caret line="118" column="6" selection-start-line="118" selection-start-column="4" selection-end-line="119" selection-end-column="49" />
+            <state relative-caret-position="-50">
+              <caret line="121" column="46" lean-forward="true" selection-start-line="121" selection-start-column="46" selection-end-line="121" selection-end-column="46" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
                 <element signature="e#600#620#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Requests/productCategoryRequest.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/errors/errorMessages.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="644">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -53,9 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/winston.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/routes/front/homeRoutes.ts" />
         <option value="$PROJECT_DIR$/routes/errors/errorRoutes.ts" />
         <option value="$PROJECT_DIR$/app/Exceptions/Handler.ts" />
         <option value="$PROJECT_DIR$/app/Requests/userRequest.ts" />
@@ -100,10 +108,13 @@
         <option value="$PROJECT_DIR$/app/Controllers/Panel/UserController.ts" />
         <option value="$PROJECT_DIR$/resources/views/panel/product-categories/index.ejs" />
         <option value="$PROJECT_DIR$/middlewares/requests/productCategoryRequest.ts" />
-        <option value="$PROJECT_DIR$/resources/views/panel/product-categories/create.ejs" />
-        <option value="$PROJECT_DIR$/app/Requests/productCategoryRequest.ts" />
         <option value="$PROJECT_DIR$/middlewares/requests/ProductCategoryRequest.ts" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/panel/footer.ejs" />
+        <option value="$PROJECT_DIR$/resources/views/panel/product-categories/edit.ejs" />
+        <option value="$PROJECT_DIR$/resources/views/panel/product-categories/create.ejs" />
         <option value="$PROJECT_DIR$/app/Controllers/Panel/ProductCategoryController.ts" />
+        <option value="$PROJECT_DIR$/app/Requests/productCategoryRequest.ts" />
+        <option value="$PROJECT_DIR$/resources/views/errors/errorMessages.ejs" />
       </list>
     </option>
   </component>
@@ -130,20 +141,7 @@
             <path>
               <item name="nodejs_project_9" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodejs_project_9" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodejs_project_9" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs_project_9" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodejs_project_9" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs_project_9" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Panel" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -191,12 +189,13 @@
       <workItem from="1622436471241" duration="1562000" />
       <workItem from="1622458362026" duration="4766000" />
       <workItem from="1622522215779" duration="25731000" />
-      <workItem from="1622610465217" duration="21294000" />
+      <workItem from="1622610465217" duration="22020000" />
+      <workItem from="1622695942725" duration="15632000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63407000" />
+    <option name="totallyTimeSpent" value="79765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -228,124 +227,13 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Models/EmployeeModel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1176">
-          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/BrandModel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/ArticleModel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1288">
-          <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/auth/authRoutes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.ejs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/DashboardController.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/panel/dashboardRoutes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#64#146#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/panel/users/create.ejs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/UserController.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="95" selection-start-line="95" selection-end-line="95" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controllers/Auth/AuthController.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="142" column="59" selection-start-line="142" selection-start-column="59" selection-end-line="142" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Requests/userRequest.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/middlewares/isLoggedIn.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622544207222-896662032_c1c4f6d4-4e9e-414c-83ca-ba67c6da9d5a_1.jpg" />
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622545362609-351916961_3d660f19-9b1e-409b-940f-a0d6cc3ddaa4_1.jpg" />
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622544263646-541142977_8971db33-60b1-4e10-a210-de8d858cecbc_1.jpg" />
     <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622545684149-846987475_a3ff3248-4d3b-4335-8a31-2a023058e1e9_1.jpg" />
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622545859015-90519421_4d65332c-d8c2-4fe9-b38b-fe44c1cee20e_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622546080666-105071390_53bb93ef-143f-4e59-bfa0-2059756f9e59_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622546161847-75643312_8b6c438f-bd9e-40e9-9a2d-16395ccadee7_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622546350980-123996475_e4a371c1-1522-4ad8-8025-1a9b65632f6b_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622546488977-885840154_fdcaecb1-8eda-4a2b-a6be-3799ceea2181_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622546628142-355236703_e829cc82-7ae4-4aad-b8d8-888c02a931cb_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622545859015-90519421_4d65332c-d8c2-4fe9-b38b-fe44c1cee20e_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622546080666-105071390_53bb93ef-143f-4e59-bfa0-2059756f9e59_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622546161847-75643312_8b6c438f-bd9e-40e9-9a2d-16395ccadee7_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622546350980-123996475_e4a371c1-1522-4ad8-8025-1a9b65632f6b_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622546488977-885840154_fdcaecb1-8eda-4a2b-a6be-3799ceea2181_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622546628142-355236703_e829cc82-7ae4-4aad-b8d8-888c02a931cb_1.jpg" />
     <entry file="file://$PROJECT_DIR$/node_modules/@types/node/globals.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -360,50 +248,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Requests/productCategoryRequest.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/panel/product-categories/create.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="21" column="56" lean-forward="true" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622618516524-455226063_f73d6622-e0f1-4384-8ee3-d5403f6bd9ac_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622615359477-469722525_5947f41b-8137-4243-975b-cc8987ffcd8d_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622618692516-93012305_3cc914c5-8e45-4414-82dc-1d6646ba094f_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622619334169-301855874_059fa709-cd61-49d9-9426-2533efd1cb2f_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622622418382-956954628_500cf041-f7c7-44f7-abe1-d4a6d06e1697_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622619586034-656488477_be2e5ce2-5444-4203-903d-7d64896bf2b1_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622619470107-772953205_c93eda5f-fe3f-40df-89ca-d5e804f4d4a8_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622619737973-422365666_8b40762b-cf20-4131-88b0-45a2a1de1c82_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622622479831-908602676_13a6a768-6b20-480f-b5a2-44b94ca549be_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622622571911-142732553_06fdb726-d1dd-4093-ab44-7322cdffc8b8_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622618516524-455226063_f73d6622-e0f1-4384-8ee3-d5403f6bd9ac_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622615359477-469722525_5947f41b-8137-4243-975b-cc8987ffcd8d_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622618692516-93012305_3cc914c5-8e45-4414-82dc-1d6646ba094f_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622619334169-301855874_059fa709-cd61-49d9-9426-2533efd1cb2f_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622622418382-956954628_500cf041-f7c7-44f7-abe1-d4a6d06e1697_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622619586034-656488477_be2e5ce2-5444-4203-903d-7d64896bf2b1_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622619470107-772953205_c93eda5f-fe3f-40df-89ca-d5e804f4d4a8_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622619737973-422365666_8b40762b-cf20-4131-88b0-45a2a1de1c82_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622622479831-908602676_13a6a768-6b20-480f-b5a2-44b94ca549be_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622622571911-142732553_06fdb726-d1dd-4093-ab44-7322cdffc8b8_1.jpg" />
     <entry file="file://$PROJECT_DIR$/middlewares/isLoggedout.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -418,24 +272,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622629797882-219495907_a5693191-3dd5-4a26-970f-40ac2835e85f_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622629749291-317867507_3b2e53bc-3d5a-423a-8022-8d79cddbf912_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622633687167-507558619_763a4999-3f7d-4c83-b383-05bf81cb0101_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622633198399-371411713_bbc75bb9-3f34-4648-a819-6fd06e757125_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622633945478-733680238_9c5c4e51-fbad-4601-b271-4ca6466aee83_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622634244144-862909137_c28d3ce3-0c6a-45b2-b581-516556045097_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622629797882-219495907_a5693191-3dd5-4a26-970f-40ac2835e85f_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622629749291-317867507_3b2e53bc-3d5a-423a-8022-8d79cddbf912_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622633687167-507558619_763a4999-3f7d-4c83-b383-05bf81cb0101_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622633198399-371411713_bbc75bb9-3f34-4648-a819-6fd06e757125_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622633945478-733680238_9c5c4e51-fbad-4601-b271-4ca6466aee83_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622634244144-862909137_c28d3ce3-0c6a-45b2-b581-516556045097_1.jpg" />
     <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622635075416-983017061_95145c48-ff7a-4c2a-9c07-a1537f79833e_1.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -456,14 +298,129 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.ejs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/panel/footer.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="15" column="4" selection-start-line="15" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/panel/header.ejs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/panel/productCategoryRoutes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/ArticleCategoryController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2135">
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/DashboardController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/ProductController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1470">
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/EmployeeController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1764">
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/UserController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-770">
+          <caret line="95" selection-start-line="95" selection-end-line="95" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622707551668-476329444_487d24a9-b479-4dd8-bf69-f847c353f63f_1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/storage/product-categories/1622698661000-808924996_03b096c0-21ed-4ac5-aa39-841d97ef32bc_1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/BrandController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2170" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/ArticleController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2170" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/panel/product-categories/create.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1882">
+          <caret line="95" column="70" lean-forward="true" selection-start-line="95" selection-start-column="70" selection-end-line="95" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/panel/product-categories/edit.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="139" column="2" lean-forward="true" selection-start-line="139" selection-start-column="2" selection-end-line="139" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/ProductCategoryController.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-616">
-          <caret line="118" column="6" selection-start-line="118" selection-start-column="4" selection-end-line="119" selection-end-column="49" />
+        <state relative-caret-position="-50">
+          <caret line="121" column="46" lean-forward="true" selection-start-line="121" selection-start-column="46" selection-end-line="121" selection-end-column="46" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
             <element signature="e#600#620#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Requests/productCategoryRequest.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/errors/errorMessages.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>

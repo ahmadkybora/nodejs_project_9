@@ -15,6 +15,7 @@ const productCategoryRequest = {
     },
     name: {
         type: "string",
+        //unique: true,
         trim: true,
         min: 2,
         max: 255,
@@ -31,6 +32,17 @@ const productCategoryRequest = {
             required: "نام وضعیت الزامی است",
         }
     },
+    image: {
+        type: "string",
+        /*png: true,
+        jpeg: true,
+        size: 100,*/
+        trim: true,
+        messages: {
+            required: "عکس الزامی است",
+        }
+    }
 };
 
+console.log(productCategoryRequest);
 export = productCategoryRequest;

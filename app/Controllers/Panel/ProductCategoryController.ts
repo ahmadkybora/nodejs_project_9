@@ -116,71 +116,64 @@ async function create(req: any, res: any) {
 }
 
 async function store(req: any, res: any) {
-    try {
-        let form = new Formidable.IncomingForm();
-        form.parse(req, async (err, fields: any, files: any) => {
-            if (typeof files.file !== 'undefined') {
-                const validate = await v.validate(fields, productCategoryRequest);
-                if (validate === true) {
-                    let oldPath = files.file.path;
-                    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-                    let fileName = `${uniqueSuffix}_${uuid()}_${files.file.name}`;
-                    let newPath = `C:/nodejs_projects/nodejs_project_9/public/storage/product-categories/${fileName}`;
+    let form = new Formidable.IncomingForm();
+    form.parse(req, async (err, fields: any, files: any) => {
+            const newPc = {
+                employeeId: fields.employeeId,
+                brandId: fields.brandId,
+                name: fields.name,
+                status: fields.status,
+                image: files.image.name
+            };
+            const validate = v.validate(newPc, productCategoryRequest);
 
-                    await sharp(oldPath)
-                        .resize(125, 90)
-                        .png({
-                            quality: 90,
-                        }).jpeg({
-                            quality: 90,
-                        })
-                        .toFile(newPath)
-                        .then(() => {
-                            ProductCategory.create({
-                                employeeId: fields.employeeId,
-                                name: fields.name,
-                                image: newPath,
-                                status: fields.status,
-                                brandId: fields.brandId
-                            }, {
-                                include: {
-                                    model: Brand
-                                }
-                            });
+            if (validate !== true) {
+                console.log(validate);
+                let oldPath = files.image.path;
+                const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+                let fileName = `${uniqueSuffix}_${uuid()}_${files.image.name}`;
+                let newPath = `C:/nodejs_projects/nodejs_project_9/public/storage/product-categories/${fileName}`;
+
+                await sharp(oldPath)
+                    .resize(125, 90)
+                    .png({
+                        quality: 90,
+                    }).jpeg({
+                        quality: 90,
+                    })
+                    .toFile(newPath)
+                    .then(() => {
+                        ProductCategory.create({
+                            employeeId: fields.employeeId,
+                            name: fields.name,
+                            image: newPath,
+                            status: fields.status,
+                            brandId: fields.brandId
+                        }, {
+                            include: {
+                                model: Brand
+                            }
                         });
-                    res.redirect("/panel/product-categories");
-                }
-                else
-                {
-                    res.render("panel/product-categories/create", {
-                        title: "Product Categories",
-                        brands: await Brand.findAll(),
-                        employees: await Employee.findAll(),
-                        errors: validate,
+                        return res.redirect("/panel/product-categories");
+                    })
+                    .catch(async (err: any) => {
+                        res.render("panel/product-categories/create", {
+                            title: "Product Categories",
+                            brands: await Brand.findAll(),
+                            employees: await Employee.findAll(),
+                            errors: validate,
+                        });
                     });
-                }
-            }
-            else
-            {
-                await ProductCategory.create({
-                    employeeId: fields.employeeId,
-                    name: fields.name,
-                    image: null,
-                    status: fields.status,
-                    brandId: fields.brandId
-                }, {
-                    include: {
-                        model: Brand
-                    }
+            } else {
+                res.render("panel/product-categories/create", {
+                    title: "Product Categories",
+                    brands: await Brand.findAll(),
+                    employees: await Employee.findAll(),
+                    errors: validate,
                 });
-                res.redirect("/panel/product-categories");
             }
-        });
-    }
-    catch (err)
-    {
-        console.log(err)
-    }
+        }
+    );
 }
 
 async function show(req: any, res: any) {
@@ -188,13 +181,11 @@ async function show(req: any, res: any) {
 
 async function edit(req: any, res: any) {
     try {
-        const brands = await Brand.findAll();
-        const category = await ProductCategory.findByPk(req.params.id, {include: Brand});
-        console.log(category);
         res.render('panel/product-categories/edit', {
             title: "editEmployees",
-            category: category,
-            brands: brands,
+            category: await ProductCategory.findByPk(req.params.id, {include: Brand}),
+            brands: await Brand.findAll(),
+            employees: await Employee.findAll(),
         });
     } catch (err) {
         console.log(err)
@@ -202,16 +193,61 @@ async function edit(req: any, res: any) {
 }
 
 async function update(req: any, res: any) {
-    try {
-        await ProductCategory.update(req.body, {
-            where: {
-                id: req.params.id
+    let form = new Formidable.IncomingForm();
+    form.parse(req, async (err, fields: any, files: any) => {
+        if (typeof files.image !== 'undefined') {
+            const newPc = {
+                employeeId: fields.employeeId,
+                brandId: fields.brandId,
+                name: fields.name,
+                status: fields.status,
+                image: files.image.name
+            };
+            const validate = await v.validate(newPc, productCategoryRequest);
+
+            if (validate === true) {
+                let oldPath = files.image.path;
+                const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+                let fileName = `${uniqueSuffix}_${uuid()}_${files.image.name}`;
+                let newPath = `C:/nodejs_projects/nodejs_project_9/public/storage/product-categories/${fileName}`;
+
+                await sharp(oldPath)
+                    .resize(125, 90)
+                    .png({
+                        quality: 90,
+                    }).jpeg({
+                        quality: 90,
+                    })
+                    .toFile(newPath)
+                    .then(async () => {
+                        await ProductCategory.update(newPc, {
+                            where: {
+                                id: req.params.id
+                            }
+                        });
+                        return res.redirect("/panel/product-categories");
+                    })
+                    .catch(async (err: any) => {
+                        console.log(err);
+                        res.render('panel/product-categories/edit', {
+                            title: "editEmployees",
+                            category: await ProductCategory.findByPk(req.params.id, {include: Brand}),
+                            brands: await Brand.findAll(),
+                            employees: await Employee.findAll(),
+                            errors: validate,
+                        });
+                    });
+            } else {
+                res.render('panel/product-categories/edit', {
+                    title: "editEmployees",
+                    category: await ProductCategory.findByPk(req.params.id, {include: Brand}),
+                    brands: await Brand.findAll(),
+                    employees: await Employee.findAll(),
+                    errors: validate,
+                });
             }
-        });
-        res.redirect("/panel/product-categories");
-    } catch (err) {
-        console.log(err)
-    }
+        }
+    });
 }
 
 async function destroy(req: any, res: any) {
